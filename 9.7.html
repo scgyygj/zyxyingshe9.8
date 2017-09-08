@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function fn(value){
+
+		alert(value);
+	}
+    // fn(fn(5));
+    function push(arr){
+    	for(var i=1;i<arguments.length;i++){
+    		arr[arr.length]=arguments[i];
+    	}
+    	alert(arr);
+    }
+    arr1=[1,2,3,4,5,6,7]
+    push(arr1,8,9,10,11,12);
+    //******排序*******
+    //1.if(参数==undefined){
+    //       默认值;
+    //}
+    //2.三元表达式
+    //    参数==undefined?真值:假值
+    //3.参数=参数||默认值
+    //4.直接在定义形参时写默认参数
+    arr2=[30,40,39,88,22,76,32,78,45,64];
+    arrpaixu(arr2);
+    function arrpaixu(arr,type){
+          type= type||'>';
+    	if(type=='>'){
+    		arrdown(arr);
+    	}else if(type=='<'){
+    		arrup(arr);
+    	}
+    }
+
+    function arrdown(arr1){
+	   	var i,temp;
+		for(i=0;i<arr1.length;i++){
+			for(var j=i+1;j<arr1.length;j++){
+				if(arr1[i]<arr1[j]){
+					temp=arr1[i];
+					arr1[i]=arr1[j];
+					arr1[j]=temp;
+				}
+			}
+		}
+		document.write(arr1);
+	   }
+	   function arrup(arr1){
+	   	var i,temp;
+		for(i=0;i<arr1.length;i++){
+			for(var j=i+1;j<arr1.length;j++){
+				if(arr1[i]>arr1[j]){
+					temp=arr1[i];
+					arr1[i]=arr1[j];
+					arr1[j]=temp;
+				}
+			}
+		}
+		document.write(arr1);
+	   }
+	   //判断一个数组中是否有某一个值
+	   var arr1=[7,6,5,3,2,8,45,67,87]
+	   var result=exist(arr1,45);
+	   alert(result);
+	   function exist(arr,value){
+	   	if(!(typeof arr == 'object' && arguments.length>1)){
+	   		return '输入错误';
+	   	}
+	   	for(var i=0;i<arr.length;i++){
+	   		if(arr[i] == value ){
+	   			return true;
+	   		}
+	   	}
+	   			return false;
+	    }
+	    //数组转字符串
+	    var arr1=[7,6,5,3,2,8,45,67,87]
+	    result=join(arr1);
+	    console.log(result);
+	    function join(arr,str){
+	    	str = str||'-';
+	    	var num='';
+	    	for(var i=0;i<arr.length;i++){
+	    		if(i<arr.length-1){
+	    			num+=arr[i]+str;
+	    		}else{
+	    			num+=arr[i];
+	    		}
+	    	}
+	    	return num;
+	    }
+	//筛选filter偶数
+	var arr=[1,2,3,4,5,6,7,8,9]
+	console.log(filter(arr))
+      function filter(arr){
+       var newarr=[];
+       for(var i=0;i<arr.length;i++){
+       	if(arr[i]%2==0){
+       		newarr[newarr.length]=arr[i];
+       	}
+       }
+       return newarr;
+      }	
+
+	</script>
+
+</body>
+</html>
