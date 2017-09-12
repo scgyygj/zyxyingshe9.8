@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script>
+		function Person(name,age,sex){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.say=function(value){
+				alert(value);
+			}
+			this.study=function(){
+				alert(this.name);
+			}
+			this.speech=function(value){
+				this.say(value);
+			}
+		}
+		let zhangsan=new Person('zhang',18,'女');
+		console.log(zhangsan);
+		zhangsan.say('方法传参');
+		zhangsan.study();
+		zhangsan.speech('啦啦啦');
+		
+	</script>
+</body>
+</html>

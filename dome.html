@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script scr='讲课.js'></script>
+</head>
+<body>
+	<script>
+	// 1
+		function Student(){
+			this.name='zhangsan';
+			this.age=18;
+			this.sex='nv';
+			this.say=function(){
+				alert(1);
+			}
+		}
+		let li = new Student();
+		let wang=new Student();
+		wang.name='wang'
+		console.log(li);//构造函数里面的所有属性及方法
+		console.log(wang);
+		// 添加
+		// 2
+      function Student1(name,age,sex){
+      	this.name=name;
+      	this.age=age;
+      	this.sex=sex;
+
+      }
+      let zhang = new Student1('zhang',21,'女');
+      console.log(zhang);
+      // 3  手机
+      function tel(color,size,money,inter){
+        this.color=color;
+        this.size=size;
+        this.money=money;
+        this.inter=inter;
+        this.calls=function(){
+        	alert('通话');
+        }
+      }
+      let iphone8= new tel('red',1500,6000,'64G')
+      iphone8.syse='SOS';
+      console.log(iphone8);
+       alert(iphone8.calls());//先弹通话在弹undefined
+       iphone8.calls(); //弹出通话
+        // i代表的是字符串
+       for(let i in iphone8){
+       	console.log(`${i}---${iphone8[i]}`);
+       }
+       //json方式创建
+       let comper={
+       	'color':'black',
+       	'size':'12英寸',
+       	'process':'四核处理器',
+       	'inter':'1000G',
+       	brand:function(){
+       		alert('联想')
+       	}
+        
+       }
+       console.log(comper);
+       for (let i in comper){
+       	console.log(`${i}---${comper[i]}`);
+       }
+       alert(comper['size']);
+       console.log(comper.constructor);
+	</script>
+</body>
+</html>

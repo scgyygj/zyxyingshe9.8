@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MyArray</title>
+	<script src="MyArray.js"></script>
+</head>
+<body>
+	<script>
+	     let arr=new MyArray('a','b','c','d',1,2,3,4,5);
+	     //在一个数组后面增加几个元素
+	     arr.push('x','y','z');
+	     //某个元素的首位
+	     console.log(arr.indexOf('c'));
+	     //某个元素最后出现的位置
+	     console.log(arr.lastindexOf('y'))
+        //是否存在某个元素
+        console.log(arr.includes('g'));
+        //数组反转
+        console.log(arr.reverse());
+        //join在某个位置插入数
+        console.log(arr.join(2,'g','h','j'));
+        //sort数组升序排序
+        console.log(arr.sort());
+        //最大值
+        console.log(arr.max());
+        //最小值
+        console.log(arr.min());
+
+	     //是否存在某一个元素符合条件
+	     let result=arr.some(function(value){
+	     	return typeof value=='string';
+	     })
+	     console.log(result);
+        //every都满足条件返回true,有一个不满足条件返回false
+        
+        let result1=arr.every(function(value1){
+        	return typeof value1=='string';
+        })
+        
+		console.log(result1);
+		// map映射
+		console.log(arr.map(value=>value+2));
+		//filter筛选数组中符合条件的元素
+		console.log(arr.filter(value=>value>'c'))
+         //输出数组
+		// console.log(arr);
+		// 初始位置   末位  是否包含某个数 反转 
+
+		// 筛选  
+		
+	</script>
+</body>
+</html>
