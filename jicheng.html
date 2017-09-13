@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name='zhang';
+			this.age=18;
+		}
+			Person.prototype={
+				sleep:function(){
+					alert('休息');
+				},
+				say:function(){
+					alert(this.name);
+				},
+			}
+		function Student(){
+			this.classes='1701';
+			this.number='wke234';
+			this.skill=function(){
+				alert('funck');
+			}
+		}
+		Student.prototype=new Person();
+		let zhangsan=new Person();
+		let lisi=new Student();
+		// console.log(lisi.name);
+		console.log(lisi);
+	</script>
+</body>
+</html>

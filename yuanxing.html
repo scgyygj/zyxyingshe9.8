@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型对象</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name='zhang';
+			this.age=18;
+		}
+			Person.prototype={
+				sleep:function(){
+					alert('休息');
+				},
+				say:function(){
+					alert(this.name);
+				},
+			}
+		Person.prototype.play=function(){    
+		//给原型对象添加一个属性
+			alert(`${this.name}玩`);
+		}
+		let zhangsan = new Person();
+		delete:zhangsan.say;
+		zhangsan.say();
+		console.log(zhangsan instanceof Person);
+		zhangsan.sleep();
+		zhangsan.play();
+	</script>
+</body>
+</html>
