@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+</head>
+<body>
+	<script>
+	//重复替换
+		function replaceAll(str,rStr){
+			let star="*".repeat(rStr.length);
+			// let star='';
+			// for(let i=0;i<rStr.length;i++){
+			// 	star+='*';
+			// }
+			while(str.includes(rStr)){
+			
+				str=str.replace(rStr,star);
+			}
+			return str;
+		}
+		let str='abcdefgabcd';
+		let relust=replaceAll(str,'abcd');
+		console.log(relust);
+		//找一个字符串在另一个字符串中的位置
+		function urlPos(url,rStr){
+			let newarr=[];
+			let star="*".repeat(rStr.lengt);
+			
+			while(url.includes(rStr)){
+			newarr.push(url.indexOf(rStr));
+				url=url.replace(rStr,star);
+				
+			}
+			return newarr;
+		}
+		let url='http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+		let relust1=urlPos(url,'baidu');
+		console.log(relust1);
+		//第二种
+		function arrpos(arr,str){
+			let newarr=[];
+			for(let i=0;i<arr.length;i++){
+			   if(arr.substr(i,str.length)==str){
+                   newarr.push(i);
+			  }	
+			}
+			return newarr;
+		}
+
+		let ur2='http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+		let relust2=arrpos(ur2,'baidu');
+		console.log(relust2);
+	</script>
+</body>
+</html>
