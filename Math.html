@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+	<style>
+	#box{
+		width: 300px;
+		height: 300px;
+		background: pink; 
+	}
+	</style>	
+</head>
+<body>
+<div id="box"></div>
+	<script>
+		// console.log(Math.abs(10)); //绝对值
+		// console.log(Math.)
+		//获取页面中的元素
+		function color(){
+			let str ='rgb('
+			for(let i=0;i<3;i++){
+				let num=Math.round(Math.random()*255);
+				str+=num+',';
+			}
+			str = str.slice(0,-1);
+			str=str+')';
+			return str;
+		}
+		let box=document.getElementById('box');
+		box.onmouseover=function(){
+			box.style.background=color();
+		}
+		//随机获取
+		
+		function arrRandom(arr,number){
+			let newarr=[];
+		   for(let i=0;i<number;){
+		     let num=Math.floor(Math.random()*arr.length);
+		     
+		     if(!newarr.includes(arr[num])){
+		     	newarr.push(arr[num]);
+		     	i++;
+		     }
+		   }
+
+		return newarr;
+		}
+        let arr=['a','s','d','f','g']
+		console.log(arrRandom(arr,4));
+			//第二种
+		// let arr=['a','s','d','f','g']
+		// function arrRandom(arr){
+		// 	let newarr=[];
+		//    for(let i=0;i<3;i++){
+		//      let num=Math.floor(Math.random()*arr.length);
+		     
+		        
+		//      	newarr.push(arr[num]);
+		//      	arr=arr.splice(num,1);
+		     	
+		     
+		//    }
+
+		// return newarr;
+		// }
+		// console.log(arrRandom(arr));
+		//第三种
+		function arrRandom1(arr,number){
+			let newarr=[];
+		   for(let i=0;i<number;i++){
+		     let num=Math.floor(Math.random()*arr.length);
+		     if(newarr.includes(arr[num])){
+		     	i--;
+		     }else {
+		     	newarr.push(arr[num]);
+		     }
+
+		   }
+
+		return newarr;
+		}
+        let arr1=['a','s','d','f','g']
+		console.log(arrRandom1(arr1,4));
+		//第四种
+		function arrRandom2(arr,number){
+			let newarr=[];
+		   while(newarr.length<number){
+		     let num=Math.floor(Math.random()*arr.length);
+		     
+		     if(!newarr.includes(arr[num])){
+		     	newarr.push(arr[num]);
+		     	
+		     }
+		  } 
+
+		return newarr;
+		}
+        let arr2=['a','s','d','f','g']
+		console.log(arrRandom2(arr2,4));
+	</script>
+</body>
+</html>
