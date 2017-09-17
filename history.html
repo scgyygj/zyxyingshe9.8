@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       buttom{
+       	padding: 10px;
+       	background: blue;
+       }
+       a{
+       	display: block;
+       	font-size: 100px;
+       	color: black;
+
+       }
+	</style>
+</head>
+<body>
+<h1><a href="history1.html">这是history第一个页面</a></h1>
+     <button id="forward">前进</button>
+     <button id='back'>后退</button>
+     <button id='new'>刷新</button>
+	<script>
+		// history.length  //历史记录的个数
+
+		// history.back()   //
+		alert(history.length);
+		let forward=document.getElementById('forward');
+		let back=document.getElementById('back');
+		let news=document.getElementById('new')
+		forward.onclick=function(){
+			history.forward();  //前进
+		}
+		back.onclick=function(){
+			history.back();  //后退
+		}
+		// history.go(-1); //后退
+		// history.go(1); //前进
+		news.onclick=function(){
+		history.go(0); //刷新
+		}
+		url：uniform resource locator   //统一资源定位符
+		
+	</script>
+</body>
+</html>
