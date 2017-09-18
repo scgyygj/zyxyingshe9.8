@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	main{
+		width: 1220px;
+		position: relative;
+		height: 300px;
+		margin: 0 auto;
+		border: 1px solid #999;
+	}
+	.btn{
+		width: 125px;
+		height: 15px;
+		position: absolute;		
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		/* border: 1px solid #333; */
+		list-style: none;
+	}
+	.btn>li{
+		float: left;
+		width: 15px;
+		height: 15px;
+		margin-right: 10px;
+		border-radius: 50%;
+		background: red;
+		cursor: pointer; 
+
+	}
+	.green{
+		background: green;
+	}
+</style>
+<body>
+	<main>
+		<ul class='btn'>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</main>
+	<script>
+		let btn=document.getElementsByClassName('btn');
+		let lis=btn[0].getElementsByTagName('li');
+        // lis.onclick=function(){
+        // 	lis.className='green';
+        // }
+		for(let i=0;i<lis.length;i++){
+		lis[i].onclick=function(){
+			lis[i].className='green';
+		}
+		}
+		getComputedStyle(获取样式的对象，null)
+		
+	</script>
+</body>
+</html>
+<!-- 操作内容：
+innerText
+textContent  获取页面中的文本，也可以设置
+innerHTML 可以获取，也可以设置，可以识别标签对
+
+对象.属性
+类名 对象.className
+id和class
+事先定义好类，可以通过对象.类名/id添加 -->

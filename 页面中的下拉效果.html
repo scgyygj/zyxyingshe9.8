@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	button{
+		background: #66ffcc;
+		padding: 20px;
+		font-size: 16px;
+		color: #fff;
+		margin-right: 30px;
+		border-radius: 10px;
+		border: none;
+
+	}
+	#box{
+       width: 242px;
+       height: 500px;
+       margin-top: 20px;
+       background: red;
+       transition: 2s;
+	}
+</style>
+<body>
+	<button>slicedown</button>
+	<button>sliceup</button>
+	<button>slice</button>
+	<div id="box"></div>
+	<script>
+		let button=document.getElementsByTagName('button');
+		let  box=document.getElementById('box');
+		button[0].onclick=function(){
+			box.style.height='0px';
+		}
+		button[1].onclick=function(){
+			box.style.height='500px';
+		}
+
+		button[2].onclick=function(){
+            let flag=true;
+			if(flag){
+				box.style.height='0px';	
+				flag=false;		
+		}
+		else{
+			box.style.height='500px';
+			flag=true;
+		}
+	}
+	</script>
+	<!-- <button>slice</button>
+	<div id="box"></div>
+	<script>
+		let button=document.getElementsByTagName('button');
+		let  box=document.getElementById('box');
+		let flag=true;
+		button[0].onclick=function(){
+
+			if(flag){
+				box.style.height='0px';	
+				flag=false;		
+		}
+		else{
+			box.style.height='500px';
+			flag=true;
+		}
+		}
+	</script> -->
+</body>
+</html>
